@@ -2,20 +2,17 @@ import { Constants } from 'expo';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import DeckHeader from '../components/DeckHeader';
 import DeckList from '../components/DeckList';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgb(149, 56, 77)',
+    backgroundColor: '#95384d',
     flex: 1,
-    marginTop: Constants.statusBarHeight,
   },
 });
 
-export default () => (
+export default ({ navigation }) => (
   <View style={styles.container}>
-    <DeckHeader />
     <DeckList />
   </View>
 );
