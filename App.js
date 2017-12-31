@@ -1,12 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
 import configureStore from './configureStore';
-import AddDeck from './screens/AddDeck';
-import Decks from './screens/Decks';
+import Deck from './screens/Deck';
+import DeckAdd from './screens/DeckAdd';
 
 const store = configureStore();
 
@@ -19,24 +19,10 @@ const styles = StyleSheet.create({
 
 const Navigation = StackNavigator({
   Deck: {
-    screen: Decks,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#95384d',
-        borderBottomWidth: 0,
-      },
-      headerRight: <TouchableOpacity onPress={() => navigation.navigate('AddDeck')}><Ionicons name="ios-add-circle-outline" size={35} style={{ color: 'white', paddingTop: 16, paddingRight: 16 }} /></TouchableOpacity>,
-    }),
+    screen: Deck,
   },
-  AddDeck: {
-    screen: AddDeck,
-    navigationOptions: ({ navigation }) => ({
-      headerStyle: {
-        backgroundColor: '#95384d',
-        borderBottomWidth: 0,
-      },
-      headerLeft: <TouchableOpacity onPress={() => navigation.goBack()}><Ionicons name="ios-arrow-back-outline" size={35} style={{ color: 'white', paddingTop: 16, paddingLeft: 16 }} /></TouchableOpacity>,
-    }),
+  DeckAdd: {
+    screen: DeckAdd,
   },
 });
 
