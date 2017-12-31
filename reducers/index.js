@@ -1,6 +1,9 @@
-export default (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import { combineReducers } from 'redux';
+
+import decks, * as fromDecks from './decks';
+
+export default combineReducers({
+  decks,
+});
+
+export const getDecks = state => fromDecks.getDecks(state.decks);
